@@ -1,4 +1,6 @@
 #!/bin/bash
+
+LC_ALL=C
 # %u oznacza ze podaje numer dnia tygodnia
 dzien=`date +%u`
 echo Dzis jest 
