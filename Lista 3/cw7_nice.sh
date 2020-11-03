@@ -10,7 +10,7 @@
 # 6. kolumna od lewej to wartość nice (nazwa kolumny "NI").
 
 # wykorzystujac nice obnize priorytet skryptu 0, żeby wykonal sie jako drugi
-# sktypt "cw7_nice.sh" wykonuje obnizenie przez zmiane liczny nice na 10.
+# sktypt "cw7_nice.sh" wykonuje obnizenie przez zmiane liczny nice skrypt0.sh na 10.
 # Wynik to drugie zdjecie (zdj_2_z_nice) w repozytorium.
 
 # renice służy do zmieny priorytetu działającego/ych procesu/ów na wartość wywołaną.
