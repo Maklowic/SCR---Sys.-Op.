@@ -48,14 +48,14 @@ int main(int argc, char** argv) {
     // opening an out file descriptor  where we want to copy everything from in file
     out_fd = open("ffiillee.txt", O_RDWR | O_CREAT);
 
+    // change up length od the file "ffiillee.txt" according to size of the input file of lenght stored in structure
+    truncate("ffiillee.txt", sb.st_size);
+    
     // mapping by mmap with (address, file length, permission to read and write, map sharing with system, out file descriptor, translation)
     file_in_memory =    mmap(NULL,    sb.st_size,  PROT_READ | PROT_WRITE,       MAP_SHARED,              out_fd,              0);
 
     // reading from fd number of bits according to length of st_size. Then writting to mapped file  
     read(fd, file_in_memory, sb.st_size);
-
-    // change up length od the file "ffiillee.txt" according to size of the input file of lenght stored in structure
-    truncate("ffiillee.txt", sb.st_size);
 
     // update/sync mapped file
     msync(file_in_memory, sb.st_size, MS_SYNC);
